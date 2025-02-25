@@ -54,14 +54,22 @@ header img {
     align-self: flex-start;
     height: 1.2rem;
     margin-top: 13px;
+    padding: 2rem;
+    
 }
 
-nav ul {
+nav {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: flex-end;
     gap: 69px;
     margin: 23px 1px;
+}
+
+nav a {
+    padding: 2rem;
+    border-top: 3px solid transparent;
 }
 
 nav a:hover {
@@ -186,14 +194,16 @@ input {
 /**** Menu Filtres ****/
 
 
-
+.btn-all {
+    display: flex;
+    flex-direction: row;
+}
 
 
 .filters {
     display: flex;
     padding-top: 18px;
     align-items: center;
-    gap: 15px;
 }
 
 .filters h3 {
@@ -483,9 +493,8 @@ footer {
     justify-content: center;
     flex-basis: 100%;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
     padding: 30px 0;
-    margin-left: -40px;
     margin-top: 20px;
     background-color: #F2F2F2;
 }
@@ -518,6 +527,17 @@ footer p {
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
+
+    .filters {
+        flex-direction: column;
+        align-items: start;
+    }
+    .btn-all {
+        display: flex;
+        flex-direction: row;
+    }
+
+
     .hebergements-and-populaires {
         flex-direction: column;
     }
@@ -548,63 +568,7 @@ footer p {
     .populaires-cards .card-subtitle {
         font-size: 13px;
     }
-}
 
-/* Small devices (phones, less than 768px) */
-/* @media (max-width: 767.98px) {
-    * {
-        margin-left: 0px;
-    }
-
-    nav {
-        display: block;
-    }
-
-    nav img {
-        display: block;
-        margin: auto;
-        padding-left: 40px;
-    }
-
-}  */
-/*** footer ***/
-
-
-/* 
-    *   Section: Search bar 
-    */   
-    /* .fa-solid.fa-magnifying-glass {
-        display: inline;
-        background-color: var(--blue);
-        margin-left: -5px;
-        font-size: 15px;
-        padding: 0;
-    }
-    .btn-search span {
-        display: none;
-    }
-     */
-  
-    /* 
-    *       filters 
-    */
-    /* .filters {
-        display: flex;
-        flex-direction: column;
-        align-content: flex-start;
-        align-items: baseline;
-
-    }
-    .filters h3 {
-        margin: 0;
-    }
-    .fa-solid.fa-info {
-        min-width: 25px;
-    }
-}
-
-/* Small devices (tablette, <=1024px)*/
-@media (max-width: 1024px) {
     .activites-cards .card img {
         height: 193.5px;
         width: 200px;
@@ -620,7 +584,21 @@ footer p {
     }
 
     footer {
-        padding: 10px;
+        padding: 20px;
+    }
+}
 
+
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+    nav {
+        order: 1;
+        flex-basis: 100%;
+    }
+
+    nav a {
+        flex-basis: 50%;
+        text-align: center;
     }
 }
